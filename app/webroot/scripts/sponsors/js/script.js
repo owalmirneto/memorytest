@@ -2,8 +2,7 @@
 (function($) {
     $(function() {
         sponsor.init();
-
-
+        sponsor.hover();
     });
     var sponsor = {
        
@@ -54,8 +53,15 @@
                             },1000);
                         }
                     }
-                    all_element.unbind('mouseenter mouseleave');
                 }
+            });
+        },
+        hover: function() {
+            
+            $(".sponsorFlip").hover(function (){
+                $(this).addClass("sponsorFlip_hover");
+            }, function (){
+                $(".sponsorFlip").removeClass("sponsorFlip_hover");
             });
         },
         clickturn: function(elem) {

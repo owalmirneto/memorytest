@@ -45,9 +45,8 @@ body{
     background:url("../img/background.jpg") no-repeat center center #f9f9f9;
 }
 
-.sponsorFlip:hover{
+.sponsorFlip_hover{
     border:1px solid #999;
-
     /* CSS3 inset shadow: */
     -moz-box-shadow:0 0 30px #999 inset;
     -webkit-box-shadow:0 0 30px #999 inset;
