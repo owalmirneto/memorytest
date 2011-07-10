@@ -6,8 +6,18 @@
     </head>
     <body>
         <div id="content">
-            <?php echo $this->contentForLayout; ?>
-            <?php echo $this->element('shared/footer'); ?>
+            <div id="header">
+                <h1><?php echo $page_title; ?></h1>
+            </div>
+            <div id="sidebar-left">
+                <?php //echo $this->element('shared/menu'); ?>
+                <?php //echo $this->element('shared/level'); ?>
+            </div>
+            <div id="main">
+                <?php echo $this->contentForLayout; ?>
+                <?php echo $this->element('shared/footer'); ?>
+            </div>
+            <br clear="all" />
         </div>
         <?php echo $this->element('shared/signature'); ?>
     </body>

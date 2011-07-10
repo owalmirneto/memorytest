@@ -4,11 +4,13 @@ class HomeController extends AppController {
 
     public $uses = array();
 
-    public function index() {
-        
-    }
-
-    public function prealphabeta() {
+    public function index() {}
+    
+    public function config() {}
+    
+    public function instructions() {}
+    
+    public function livre() {
         // Each sponsor is an element of the $charts array:
         $charts = array(
             array("id" => 1, "img" => "mysql",),
@@ -24,6 +26,7 @@ class HomeController extends AppController {
             array("id" => 11, "img" => "canon",),
             array("id" => 12, "img" => "facebook",),
         );
+        
         $charts = array_merge($charts, $charts);
         // Randomizing the order of sponsors:
         shuffle($charts);

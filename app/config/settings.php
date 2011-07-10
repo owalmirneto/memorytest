@@ -23,13 +23,13 @@ Config::write('default_language', 'br');
 
 // Environment
 if (Config::read('multilang')):
-	if (Session::read('language')):
-		Config::write("environment", Session::read('language'));
-	else:
-		Config::write("environment", Config::read('default_language'));
-	endif;
+    if (Session::read('language')):
+        Config::write("environment", Session::read('language'));
+    else:
+        Config::write("environment", Config::read('default_language'));
+    endif;
 else:
-	Config::write("environment", 'development'); //Change here if there's no multilang
+    Config::write("environment", 'development'); //Change here if there's no multilang
 endif;
 
 // Debug mode
@@ -49,10 +49,3 @@ Config::write('Mailer.smtp.port', '25');
 Config::write('Mailer.smtp.encryption', '');
 Config::write('Mailer.smtp.username', "valdeir.antonio@agiletecnologia.com.br"); //email
 Config::write('Mailer.smtp.password', "valdeir2010"); //password
-
-//public $CONF_SMTP = "mail.agiletecnologia.com.br";
-//    public $CONF_NOME = "Acervo Fashion";
-//    public $CONF_EMAIL = "wfsneto@gmail.com";
-//    public $CONF_CONTA = "valdeir.antonio@agiletecnologia.com.br";
-//    public $CONF_PASSWORD = "valdeir2010";
-

@@ -87,6 +87,7 @@ class AppController extends Controller {
 
     private function setUrlHistory() {
         $explode = explode('/', Mapper::here());
+        $explode[2] = (isset($explode[2]))? $explode[2]:null;
         if ((Mapper::here() != $this->urlHistory) && ($explode[2] != 'get_categories') && ($explode[1] != 'get_suppliers')):
             Session::write('urlHistory', Mapper::here());
         endif;

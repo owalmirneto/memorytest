@@ -9,7 +9,7 @@
 Config::write("database", array(
     "development" => array(
         "driver" => "mysql",
-        "host" => "study_pianolab_memorytest",
+        "host" => "localhost",
         "user" => "root",
         "password" => "umdoistres",
         "database" => "study_pianolab_memorytest",
@@ -17,7 +17,7 @@ Config::write("database", array(
     ),
     "production" => array(
         "driver" => "mysql",
-        "host" => "study_pianolab_memorytest",
+        "host" => "localhost",
         "user" => "root",
         "password" => "umdoistres",
         "database" => "study_pianolab_memorytest",

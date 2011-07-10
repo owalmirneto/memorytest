@@ -1,2 +1,5 @@
 nbproject/
+app/controllers/example_controller.php
+app/models/example.php
+app/views/example/
 
