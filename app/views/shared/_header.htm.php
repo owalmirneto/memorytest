@@ -3,7 +3,7 @@
 <?php
 echo $html->stylesheet(array(
     "screen.css",
-    "../scripts/sponsors/css/styles.css",
+    "../scripts/jquery.flip/css/styles.css",
 ));
 ?>
 <!--/style of page-->
@@ -17,11 +17,24 @@ echo $html->script(array(
 ?>
 <!--/jquery/jquery-ui-->
 
-<!--sponsors-->
+<!--jquery.flip-->
 <?php
 echo $html->script(array(
-    "sponsors/js/jquery.flip.min.js",
-    "sponsors/js/script.js",
+    "jquery.flip/js/jquery.flip.min.js",
+    "jquery.flip/js/script.js",
 ));
 ?>
-<!--/sponsors-->
+<!--/jquery.flip-->
+
+<!--pirobox-->
+<?php
+echo $html->stylesheet(array(
+    "../scripts/pirobox/css2/style.css",
+    "../scripts/pirobox/css/sansation/stylesheet.css",
+));
+echo $html->script(array(
+    "pirobox/js/pirobox_extended.js",
+    "pirobox/js/init.js",
+));
+?>
+<!--/pirobox-->

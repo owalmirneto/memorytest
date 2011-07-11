@@ -32,6 +32,8 @@ class Session extends Object {
      */
     public static function read($name) {
         if(!self::started()) self::start();
+        if (!isset($_SESSION[$name]))
+            return false;
         return $_SESSION[$name];
     }
     /**

@@ -62,7 +62,7 @@ a, a:visited {
 }
 
 a:hover{
-/*    text-decoration:underline;*/
+    /*    text-decoration:underline;*/
 }
 
 a img{
@@ -108,12 +108,11 @@ a img{
 }
 
 /* button list*/
-#buttons ul {
+#buttons ul{
     text-align: center;
     width: 300px;
     margin: auto;
 }
-
 #buttons ul li {
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
@@ -124,11 +123,11 @@ a img{
 }
 
 #buttons ul li:hover {
-    cursor: pointer;
+/*    cursor: pointer;
     background: #666;
     color: #ddd;
     margin: 10px;
-    padding: 5px 10px;
+    padding: 5px 10px;*/
 }
 
 /* sidebar-left */
@@ -164,6 +163,21 @@ a img{
 
 /* forms */
 
+/* points*/
+#points {
+    width: 600px;
+}
+#points div {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    float: left;
+    width: 160px;
+    font-size: 13px;
+    margin: 5px 5px;
+    padding: 5px 5px;
+    border: 1px solid;
+}
 /* extra */
 
 /* benchmark */
