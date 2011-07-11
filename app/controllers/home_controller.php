@@ -40,9 +40,12 @@ class HomeController extends AppController {
         $this->layout = false;
     }
 
-    public function congratulations($hits, $errors, $tempo) {
+    public function congratulations($hits, $errors, $time) {
         $this->layout = false;
-        echo "$errors, $hits, $tempo";
+        
+        $this->set("hits", $hits);
+        $this->set("errors", $errors);
+        $this->set("time", $time);
     }
 
     public function livre() {

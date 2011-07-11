@@ -21,7 +21,7 @@
     <?php } // endforeach; ?>
     <div class="clear"></div>
 </div>
-<a id="winner" href="<?php echo $base; ?>/home/congratulations" rel="content-600-300" class="pirobox_gall1"></a>
+<a id="winner" href="<?php echo $base; ?>/home/congratulations" rel="content-400-300" class="pirobox_gall1"></a>
 <input type="hidden" id="first" />
 <input type="hidden" id="idfirst" />
 <input type="hidden" id="second" />

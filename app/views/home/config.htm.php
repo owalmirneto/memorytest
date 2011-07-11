@@ -1,7 +1,7 @@
 <?php $base = Mapper::base(); ?>
 <div id="config">
     <div id="header">
-        <h2>Modo de jogo</h2>
+        <h2>Game Mode</h2>
     </div>
     <div id="buttons">
         <ul>
