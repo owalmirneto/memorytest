@@ -1,0 +1,24 @@
+|_new game
+    |_livre
+        |_escolha o tema
+        |_escolha o nível
+    |_campanha
+    |_configuravel
+        |_quantidade de carta (em pares) {32}
+        |_disposição das cartas {16x2}||{8x4}||{4x8}
+|_continue
+    |_campanha
+        |_nível 1 (habilitado)
+        |_nível 2 (habilitado)
+        |_nível 3 (Desabilitado)
+        |_nível 4 (Desabilitado)
+        |_nível 5 (Desabilitado)
+        |_nível 6 (Desabilitado)
+    |_configuravel
+|_highrecords
+    |_livre
+    |_campanha
+    |_configuravel
+|_tutorial
+|_credits
+

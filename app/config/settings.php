@@ -29,7 +29,12 @@ if (Config::read('multilang')):
         Config::write("environment", Config::read('default_language'));
     endif;
 else:
-    Config::write("environment", 'development'); //Change here if there's no multilang
+    if ($_SERVER["SERVER_NAME"] == "localhost") {
+        Config::write("environment", 'development'); //Change here if there's no multilang
+    } 
+    else if ($_SERVER["SERVER_NAME"] == "wfsneto.com.br") {
+        Config::write("environment", 'production'); //Change here if there's no multilang
+    }
 endif;
 
 // Debug mode

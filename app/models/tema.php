@@ -1,46 +1,49 @@
 <?php
 
 /**
- * Description of Usuario
- *
- * @name Usuario
+ * Description of Tema
+ * 
+ * @name Tema
  * @package models
- *
+ * 
  * @author wfsneto <wfsneto@gmail.com>
  * @copyright Pianolab <http://www.pianolab.com.br>
  */
-class Usuario extends AppModel {
+class Tema extends AppModel {
 
     /**
      * Nome da tabela
-     * @var string
+     * @var string 
      */
-    public $table = "usuario";
+    public $table = "tema";
+    /**
+     * Relacionamento com o Carta Model
+     * @var array
+     */
+    public $hasMany = array("Carta");
 
     /**
-     * Retorna todos os registros correspondente ao model Usuario
+     * Retorna todos os registros correspondente ao model Tema
      * @name getAll
-     * @return Usuario[]
+     * @return Tema[] 
      */
-    public function getAll() {
+    public function getAll(array $options = array()) {
         // resgata todos os registros
-        $usuarios = $this->all(array(
-                    "order" => "nome ASC",
-                ));
+        $temas = $this->all();
         // verifica se há algum registros
-        if (count($usuarios) == 0) {
+        if (count($temas) == 0) {
             // caso não tenha levanta excessão
-            throw new Exception("Nenhum Usuario Encontrado");
+            throw new Exception("Nenhum tema encontrado");
         }
         // retorno
-        return $usuarios;
+        return $temas;
     }
 
     /**
-     * Retorna apenas um registro correspondente ao model Usuario
+     * Retorna apenas um registro correspondente ao model Tema
      * @name get
-     * @param int $id Id do usuario
-     * @return Usuario
+     * @param int $id Id do tema
+     * @return Tema 
      */
     public function get($id) {
         // array de opções como condição, limite, ordem. etc...
@@ -53,41 +56,29 @@ class Usuario extends AppModel {
             "limit" => "1",
         );
         // resgata o registro
-        $usuario = $this->first($options);
+        $tema = $this->first($options);
         // verifica se há algum registros
-        if (count($usuario) == 0) {
+        if (count($tema) == 0) {
             // caso não tenha levanta excessão
-            throw new Exception("Nenhum Usuario Encontrado");
+            throw new Exception("Nenhum tema encontrado");
         }
         // retorno
-        return $usuario;
+        return $tema;
     }
 
     /**
-     * Retorna apenas um registro correspondente ao model Usuario
-     * @name getByName
-     * @param int $name Id do usuario
-     * @return Usuario
+     * Apagar apenas um registro correspondente ao model Tema
+     * @name delete
+     * @param int $id Id do tema
+     * @return Tema 
      */
-    public function getByName($name) {
-        // array de opções como condição, limite, ordem. etc...
-        $options = array(
-            // referente as condições
-            "conditions" => array(
-                "nome" => $name
-            ),
-            // referente a limite
-            "limit" => "1",
-        );
-        // resgata o registro
-        $usuario = $this->first($options);
-        // verifica se há algum registros
-        if (count($usuario) == 0) {
-            // caso não tenha levanta excessão
-            return false;
+    public function _delete($id) {
+        // executa
+        if (!$this->delete($id)) {
+            throw new Exception("Não possível apagar tema");
         }
         // retorno
-        return $usuario;
+        return true;
     }
 
     /**
@@ -95,7 +86,7 @@ class Usuario extends AppModel {
      * @name persist
      * @param array $data Dados a serem persistidos na base de dados.
      * @param string $exeption Mensagem da Excessão.
-     * @return Boolean
+     * @return Boolean 
      */
     public function persist($data, $exeption) {
         // executar o comando de persistencia
@@ -110,4 +101,3 @@ class Usuario extends AppModel {
     }
 
 }
-

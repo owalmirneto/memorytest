@@ -17,10 +17,10 @@ Config::write("database", array(
     ),
     "production" => array(
         "driver" => "mysql",
-        "host" => "localhost",
-        "user" => "root",
-        "password" => "umdoistres",
-        "database" => "study_pianolab_memorytest",
+        "host" => "dbmy0042.whservidor.com",
+        "user" => "wfsneto_1",
+        "password" => "senha123",
+        "database" => "wfsneto_1",
         "prefix" => ""
     )
 ));
