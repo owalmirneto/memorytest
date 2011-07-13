@@ -4,16 +4,16 @@
         <h2>Game Mode</h2>
     </div>
     <div id="buttons">
-        <ul>
-            <li title="Free">
-                <a href="<?php echo $base; ?>/home/free">Free</a>
-            </li>
-            <li title="Campaign">
-                <a href="<?php echo $base; ?>/home/campaign">Campaign</a>
-            </li>
-            <li title="Configurable">
-                <a href="<?php echo $base; ?>/home/configurable">Configurable</a>
-            </li>
-        </ul>
+        <?php if (is_array($modos)) { ?>
+            <ul>
+                <?php foreach ($modos as $key => $modo) { ?>
+                    <li title="<?php echo $modo["nome"]; ?>">
+                        <a href="<?php echo $base; ?><?php echo $modo["link"]; ?>"><?php echo $modo["nome"]; ?></a>
+                    </li>
+                <?php } // endforeach; ?>
+            </ul>
+        <?php } else { ?>
+            <?php echo $modos ?>
+        <?php } // endif; ?>
     </div>
 </div>

@@ -1,14 +1,16 @@
 <div id="modegame">
     <h2>Campaign</h2>
-    <a href="#">
-        <div class="active">1</div>
+    <?php foreach ($jogosalvo as $key => $value) { ?>
+        <a href="<?php echo $base ?>/start/campaign/<?php echo $value["nivel"]; ?>">
+            <div class="active"><?php echo $value["nivel"]; ?></div>
+        </a>
+        <?php $current = $value["nivel"] + 1 ?>
+    <?php } // endforeach; ?>
+    <a href="<?php echo $base ?>/start/campaign/<?php echo $current; ?>">
+        <div><?php echo $current; ?></div>
     </a>
-    <a href="#">
-        <div>2</div>
-    </a>
-    <div class="inactive">3</div>
-    <div class="inactive">4</div>
-    <div class="inactive">5</div>
-    <div class="inactive">6</div>
+    <?php for ($i = count($jogosalvo) + 1; $i < 6; $i++) { ?>
+        <div class="inactive"><?php echo $i + 1; ?></div>
+    <?php } // endfor; ?>
     <br clear="all" />
 </div>

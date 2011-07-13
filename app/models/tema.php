@@ -29,7 +29,7 @@ class Tema extends AppModel {
      */
     public function getAll(array $options = array()) {
         // resgata todos os registros
-        $temas = $this->all();
+        $temas = $this->all($options);
         // verifica se há algum registros
         if (count($temas) == 0) {
             // caso não tenha levanta excessão

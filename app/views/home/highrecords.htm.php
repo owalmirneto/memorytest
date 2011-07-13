@@ -18,7 +18,7 @@
     $(document).ready( function () {
         $("#tabs div div").click( function () {
             content = $(this).parent("div").siblings("div.content");
-            $.post("<?php echo $base; ?>/home/ranking", {id: $(this).attr("alt")}, function (data) {
+            $.post("<?php echo $base; ?>/home/ranking", {modo_id: $(this).attr("alt")}, function (data) {
                 content.html(data);
             });
         });

@@ -4,14 +4,14 @@
 </div>
 <div style="text-align: center">
     <input value="" />
-    <input type="button" id="submit" value="OK" />
+    <a href="<?php echo $base; ?>" class="button" id="submit">OK</a>
     <div id="menssage"></div>
 </div>
 <script type="text/javascript">
     $(document).ready( function () {
         $("#submit").live("click", function () {
             $.post("<?php echo $base; ?>/home/savename/", { nome: $(this).siblings().val() }, function () {
-                $(".piro_overlay").click()
+                $(".piro_overlay").click();
             });
         });
     });

@@ -9,6 +9,15 @@ class HomeController extends AppController {
     public $uses = array("Carta", "Usuario", "Recorde", "Modo");
 
     /**
+     * Ação default 
+     * @name index
+     * @return Void 
+     */
+    public function index() {
+        
+    }
+
+    /**
      * Ação salva o nome do Usuario
      * @name savename
      * @return Void 
@@ -21,27 +30,59 @@ class HomeController extends AppController {
 
         if ($this->data["nome"] != "") {
 
-                $object = $usuario->getByName($this->data["nome"]);
+            $this->data["tema_id"] = 1;
+            $this->data["ip_rede"] = $_SERVER["REMOTE_ADDR"];
+
+            $object = $usuario->getByName($this->data["nome"]);
 
             try {
                 if (!$object) {
                     $usuario->persist($this->data, "");
                 }
-                $_SESSION["name"] = $this->data["nome"];
-            } catch (Exception $exc) {}
+                $object = $usuario->getByName($this->data["nome"]);
+                $_SESSION["Usuario"] = $object;
+            } catch (Exception $exc) {
+                
+            }
         }
     }
 
     /**
      * Ação parabeniza o Usuario
-     * @name congratulations
+     * @name configurable
+     * @return Void 
+     */
+    public function configurable() {
+        
+    }
+
+    /**
+     * Ação parabeniza o Usuario
+     * @name configurable
+     * @return Void 
+     */
+    public function campaign() {
+        $this->set("base", Mapper::base());
+
+        $this->set("current", 1);
+        $usuario = Session::read('Usuario');
+        if (!$usuario) {
+            $this->set("jogosalvo", array());
+        } else {
+            $this->set("jogosalvo", $usuario["jogosalvo"]);
+        }
+    }
+
+    /**
+     * Ação parabeniza o Usuario
+     * @name highrecords
      * @return Void 
      */
     public function highrecords() {
         // seta o layout
         $this->layout = false;
+        // instancia de Modo 
         $modo = new Modo();
-
         try {
             $this->set("modos", $modo->getAll());
         } catch (Exception $exc) {
@@ -62,7 +103,8 @@ class HomeController extends AppController {
         $usuario = new Usuario();
         $record = new Recorde();
 
-        $object = $usuario->getByName(Session::read("name"));
+        $jogador = Session::read("Usuario");
+        $object = $usuario->getByName($jogador["nome"]);
 
         $time = str_replace("-", ":", $time);
         $aux = explode(":", $time);
@@ -73,15 +115,17 @@ class HomeController extends AppController {
         $this->set("errors", $errors);
         $this->set("time", $time);
         $this->set("points", $points);
-
-        $record->save(array(
-            "usuario_id" => $object["id"],
-            "usuario_id" => 1,
-            "erros" => $errors,
-            "acertos" => $hits,
-            "tempos" => $time,
-            "pontos" => $points,
-        ));
+        
+        if ($_POST) {
+            $record->save(array(
+                "usuario_id" => $object["id"],
+                "modo_id" => 1,
+                "erros" => $_POST["errors"],
+                "acertos" => $_POST["hits"],
+                "tempos" => str_replace("-", ":", $_POST["time"]),
+                "pontos" => $points,
+            ));
+        }
     }
 
     /**
@@ -99,10 +143,6 @@ class HomeController extends AppController {
         }
     }
 
-    public function index() {
-        
-    }
-
     public function ranking() {
         // seta o layout
         $this->layout = false;
@@ -112,8 +152,8 @@ class HomeController extends AppController {
 
             try {
                 $this->set("recordes", $recorde->getAll(array(
-                            "conditions" => array("modo_id" => $this->data["id"]),
-                            "recursion" => -1
+                            "conditions" => array("modo_id" => $this->data["modo_id"]),
+                            "order" => "pontos DESC, acertos DESC, erros DESC",
                         )));
             } catch (Exception $exc) {
                 $this->set("recordes", $exc->getMessage());
@@ -124,6 +164,35 @@ class HomeController extends AppController {
     public function newgame() {
         // seta o layout
         $this->layout = false;
+        // instancia de Modo 
+        $modo = new Modo();
+        try {
+            $this->set("modos", $modo->getAll());
+        } catch (Exception $exc) {
+            $this->set("modos", $exc->getMessage());
+        }
+    }
+
+    public function player() {
+        // seta o layout
+        $this->layout = false;
+        // instancia de usuario 
+        $usuario = new Usuario();
+        try {
+            $this->set("usuarios", $usuario->getAll());
+        } catch (Exception $exc) {
+            $this->set("usuarios", $exc->getMessage());
+        }
+        //  retorna o model
+        $usuario = ClassRegistry::load('Usuario', 'Model');
+
+        if ($this->data) {
+            try {
+                $object = $usuario->getByName($this->data["nome"]);
+                $_SESSION["Usuario"] = $object;
+            } catch (Exception $exc) {}
+        }
+    
     }
 
     public function name() {

@@ -3,7 +3,9 @@
  * Use it only for default methods around the website
  */
 (function($){
-	
-	// Code goes here
-	
+    $(document).ready( function () {
+        if ($("#user").html() == "") {
+            $("#name").click();
+        }
+    });
 })(jQuery);

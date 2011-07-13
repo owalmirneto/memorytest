@@ -16,6 +16,16 @@ class Usuario extends AppModel {
      * @var string
      */
     public $table = "usuario";
+    /**
+     * Relacionamento com o Tema Model
+     * @var array
+     */
+    public $belongsTo = array("Tema");
+    /**
+     * Relacionamento com o Jogosalvo Model
+     * @var array
+     */
+    public $hasMany = array("Jogosalvo");
 
     /**
      * Retorna todos os registros correspondente ao model Usuario

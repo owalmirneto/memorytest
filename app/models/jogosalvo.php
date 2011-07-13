@@ -1,50 +1,44 @@
 <?php
 
 /**
- * Description of Recorde
+ * Description of Jogosalvo
  * 
- * @name Recorde
+ * @name Jogosalvo
  * @package models
  * 
  * @author wfsneto <wfsneto@gmail.com>
  * @copyright Pianolab <http://www.pianolab.com.br>
  */
-class Recorde extends AppModel {
+class Jogosalvo extends AppModel {
 
     /**
      * Nome da tabela
      * @var string 
      */
-    public $table = "recorde";
-    
-    /**
-     * Relacionamento com o Tema, Modo Model
-     * @var array
-     */
-    public $belongsTo = array("Usuario", "Modo");
+    public $table = "jogosalvo";
 
     /**
-     * Retorna todos os registros correspondente ao model Recorde
+     * Retorna todos os registros correspondente ao model Jogosalvo
      * @name getAll
-     * @return Recorde[] 
+     * @return Jogosalvo[] 
      */
     public function getAll(array $options = array()) {
         // resgata todos os registros
-        $recordes = $this->all($options);
+        $jogosalvos = $this->all($options);
         // verifica se há algum registros
-        if (count($recordes) == 0) {
+        if (count($jogosalvos) == 0) {
             // caso não tenha levanta excessão
-            throw new Exception("Nenhum recorde encontrado");
+            throw new Exception("Nenhum jogosalvo encontrado");
         }
         // retorno
-        return $recordes;
+        return $jogosalvos;
     }
 
     /**
-     * Retorna apenas um registro correspondente ao model Recorde
+     * Retorna apenas um registro correspondente ao model Jogosalvo
      * @name get
-     * @param int $id Id do recorde
-     * @return Recorde 
+     * @param int $id Id do jogosalvo
+     * @return Jogosalvo 
      */
     public function get($id) {
         // array de opções como condição, limite, ordem. etc...
@@ -57,26 +51,26 @@ class Recorde extends AppModel {
             "limit" => "1",
         );
         // resgata o registro
-        $recorde = $this->first($options);
+        $jogosalvo = $this->first($options);
         // verifica se há algum registros
-        if (count($recorde) == 0) {
+        if (count($jogosalvo) == 0) {
             // caso não tenha levanta excessão
-            throw new Exception("Nenhum recorde encontrado");
+            throw new Exception("Nenhum jogosalvo encontrado");
         }
         // retorno
-        return $recorde;
+        return $jogosalvo;
     }
 
     /**
-     * Apagar apenas um registro correspondente ao model Recorde
+     * Apagar apenas um registro correspondente ao model Jogosalvo
      * @name delete
-     * @param int $id Id do recorde
-     * @return Recorde 
+     * @param int $id Id do jogosalvo
+     * @return Jogosalvo 
      */
     public function _delete($id) {
         // executa
         if (!$this->delete($id)) {
-            throw new Exception("Não possível apagar recorde");
+            throw new Exception("Não possível apagar jogosalvo");
         }
         // retorno
         return true;

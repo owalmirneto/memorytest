@@ -85,11 +85,19 @@
                     });
                     
                     $('#winner').click();
+                    $.post(new_href, {
+                        hits: hits,
+                        errors: errors,
+                        time: time
+                    }, function (data) {
+                        alert(data);
+                    });
+                    return false;
                 },1500)
             }
         },
         sHors: "00",
-        sMins: "03",
+        sMins: "01",
         sSecs: 60,
         startChronometer: function() {
                         
