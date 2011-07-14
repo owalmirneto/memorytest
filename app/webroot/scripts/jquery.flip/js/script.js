@@ -89,9 +89,7 @@
                         hits: hits,
                         errors: errors,
                         time: time
-                    }, function (data) {
-                        alert(data);
-                    });
+                    }, function (data) {});
                     return false;
                 },1500)
             }

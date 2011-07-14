@@ -17,9 +17,24 @@
             <?php echo $usuarios ?>
         <?php } // endif; ?>
     </div>
+    <div id="header">
+        <h2>Or input your name</h2>
+    </div>
+    <div style="text-align: center; margin-bottom: 20px">
+        <input value="" />
+        <a href="<?php echo $base; ?>" class="button" id="submit">OK</a>
+    </div>
 </div>
 <script type="text/javascript">
     $(document).ready( function () {
+        $("#submit").live("click", function () {
+            a = $(this).attr("alt");
+            $.post("<?php echo $base; ?>/home/savename/", { nome: $(this).siblings().val() }, function (data) {
+                $(".piro_overlay").click();
+                window.location = a;
+            });
+        }); 
+    
         $("#buttons a").live("click", function () {
             $.post("<?php echo $base; ?>/home/player/", { nome: $(this).siblings().val() }, function () {
                 $(".piro_overlay").click();

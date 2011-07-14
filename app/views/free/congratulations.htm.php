@@ -9,5 +9,6 @@
             <li id="errors">Errors: <?php echo $errors ?> X (-5 points)</li>
             <li id="point">Total: <?php echo $points ?> points</li>
         </ul>
+        <a href="<?php echo $base = Mapper::base(); ?>/free" class="button">Play again</a>
     </div>
 </div>

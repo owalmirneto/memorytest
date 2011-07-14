@@ -1,7 +1,7 @@
 <?php $base = Mapper::base(); ?>
 <div id="modegame">
     <h2>Free</h2>
-    <form action="<?php echo $base; ?>/start" method="post">
+    <form action="<?php echo $base; ?>/free/start" method="post">
         <fieldset>
             <label for="theme">Choose theme</label><br />
             <select id="theme" name="theme">

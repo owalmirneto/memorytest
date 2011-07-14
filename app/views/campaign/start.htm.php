@@ -3,7 +3,7 @@
     <div id="errors">Errors: <span>0</span></div>
     <div id="hits">Hits: <span>0</span></div>
     <div id="time">Time: <span>02:00</span></div>
-    <div id="point">Time: <span>300</span></div>
+    <div id="point">Points: <span>300</span></div>
 </div>
 <br clear="all" />
 <div class="sponsorListHolder" style="margin: auto;">
@@ -22,7 +22,7 @@
     <?php } // endforeach; ?>
     <div class="clear"></div>
 </div>
-<a id="winner" href="<?php echo $base; ?>/home/congratulations" rel="content-400-300" class="pirobox_gall1"></a>
+<a id="winner" href="<?php echo $base; ?>/campaign/congratulations/<?php echo $level; ?>" rel="content-400-300" class="pirobox_gall1"></a>
 <input type="hidden" id="first" />
 <input type="hidden" id="idfirst" />
 <input type="hidden" id="second" />

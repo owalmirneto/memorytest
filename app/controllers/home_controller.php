@@ -19,6 +19,16 @@ class HomeController extends AppController {
 
     /**
      * Ação salva o nome do Usuario
+     * @name name
+     * @return Void 
+     */
+    public function name() {
+        // seta o layout
+        $this->layout = false;
+    }
+
+    /**
+     * Ação salva o nome do Usuario
      * @name savename
      * @return Void 
      */
@@ -42,23 +52,14 @@ class HomeController extends AppController {
                 $object = $usuario->getByName($this->data["nome"]);
                 $_SESSION["Usuario"] = $object;
             } catch (Exception $exc) {
-                
+                echo $exc->getMessage();
             }
         }
     }
 
     /**
      * Ação parabeniza o Usuario
-     * @name configurable
-     * @return Void 
-     */
-    public function configurable() {
-        
-    }
-
-    /**
-     * Ação parabeniza o Usuario
-     * @name configurable
+     * @name campaign
      * @return Void 
      */
     public function campaign() {
@@ -87,59 +88,6 @@ class HomeController extends AppController {
             $this->set("modos", $modo->getAll());
         } catch (Exception $exc) {
             $this->set("modos", $exc->getMessage());
-        }
-    }
-
-    /**
-     * Ação parabeniza o Usuario
-     * @name congratulations
-     * @return Void 
-     */
-    public function congratulations($hits, $errors, $time) {
-
-        // seta o layout
-        $this->layout = false;
-
-        $usuario = new Usuario();
-        $record = new Recorde();
-
-        $jogador = Session::read("Usuario");
-        $object = $usuario->getByName($jogador["nome"]);
-
-        $time = str_replace("-", ":", $time);
-        $aux = explode(":", $time);
-        $points = (($hits * 50) - ($errors * 5) + ($aux[0] * 60 + $aux[1]));
-
-        $this->set("usuario", $object);
-        $this->set("hits", $hits);
-        $this->set("errors", $errors);
-        $this->set("time", $time);
-        $this->set("points", $points);
-        
-        if ($_POST) {
-            $record->save(array(
-                "usuario_id" => $object["id"],
-                "modo_id" => 1,
-                "erros" => $_POST["errors"],
-                "acertos" => $_POST["hits"],
-                "tempos" => str_replace("-", ":", $_POST["time"]),
-                "pontos" => $points,
-            ));
-        }
-    }
-
-    /**
-     * Ação salva o nome do Usuario
-     * @name free
-     * @return Void 
-     */
-    public function free() {
-
-        $tema = new Tema();
-        try {
-            $this->set("temas", $tema->getAll(array("recursion" => -1)));
-        } catch (Exception $exc) {
-            $this->set("temas", $exc->getMessage());
         }
     }
 
@@ -179,7 +127,10 @@ class HomeController extends AppController {
         // instancia de usuario 
         $usuario = new Usuario();
         try {
-            $this->set("usuarios", $usuario->getAll());
+            $this->set("usuarios", $usuario->getAll(array(
+                        "conditions" => array("ip_rede" => $_SERVER["REMOTE_ADDR"]),
+                        "order" => "nome ASC",
+                    )));
         } catch (Exception $exc) {
             $this->set("usuarios", $exc->getMessage());
         }
@@ -190,24 +141,10 @@ class HomeController extends AppController {
             try {
                 $object = $usuario->getByName($this->data["nome"]);
                 $_SESSION["Usuario"] = $object;
-            } catch (Exception $exc) {}
+            } catch (Exception $exc) {
+                
+            }
         }
-    
-    }
-
-    public function name() {
-        // seta o layout
-        $this->layout = false;
-    }
-
-    public function records() {
-        // seta o layout
-        $this->layout = false;
-    }
-
-    public function instructions() {
-        // seta o layout
-        $this->layout = false;
     }
 
 }

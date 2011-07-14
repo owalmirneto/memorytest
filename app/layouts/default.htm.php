@@ -33,6 +33,6 @@ $usuario = Session::read('Usuario');
             <br clear="all" />
         </div>
         <?php echo $this->element('shared/signature'); ?>
-        <a id="name" href="<?php echo $base; ?>/home/name" rel="content-300-125" class="pirobox_gall1"></a>
+        <a id="name" href="<?php echo $base; ?>/home/name" rel="content-320-125" class="pirobox_gall1"></a>
     </body>
 </html>

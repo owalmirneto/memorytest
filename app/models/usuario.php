@@ -32,11 +32,9 @@ class Usuario extends AppModel {
      * @name getAll
      * @return Usuario[]
      */
-    public function getAll() {
+    public function getAll(array $options = array()) {
         // resgata todos os registros
-        $usuarios = $this->all(array(
-                    "order" => "nome ASC",
-                ));
+        $usuarios = $this->all($options);
         // verifica se há algum registros
         if (count($usuarios) == 0) {
             // caso não tenha levanta excessão

@@ -1,18 +1,18 @@
 <table width="100%" border="1">
-    <thead>
-        <tr>
-            <th colspan="5"><?php echo $recordes[0]["modo"]["nome"]; ?></th>
-        </tr>
-        <tr>
-            <th>Name</th>
-            <th>Errors</th>
-            <th>Hits</th>
-            <th>Time</th>
-            <th>Points</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php if (is_array($recordes)) { ?>
+    <?php if (is_array($recordes)) { ?>
+        <thead>
+            <tr>
+                <th colspan="5"><?php echo $recordes[0]["modo"]["nome"]; ?></th>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <th>Errors</th>
+                <th>Hits</th>
+                <th>Time</th>
+                <th>Points</th>
+            </tr>
+        </thead>
+        <tbody>
             <?php foreach ($recordes as $key => $recorde) { ?>
                 <tr>
                     <td><?php echo $recorde["usuario"]["nome"]; ?></td>
