@@ -1,7 +1,7 @@
 <?php $base = Mapper::base(); ?>
 <div id="config">
     <div id="header">
-        <h2>Choose player</h2>
+        <h2>Escolher jogador</h2>
     </div>
     <div id="buttons">
         <?php if (is_array($usuarios)) { ?>
@@ -18,7 +18,7 @@
         <?php } // endif; ?>
     </div>
     <div id="header">
-        <h2>Or input your name</h2>
+        <h2>Ou digite seu nome</h2>
     </div>
     <div style="text-align: center; margin-bottom: 20px">
         <input value="" />
@@ -28,11 +28,12 @@
 <script type="text/javascript">
     $(document).ready( function () {
         $("#submit").live("click", function () {
-            a = $(this).attr("alt");
+            link = $(this).attr("href");
             $.post("<?php echo $base; ?>/home/savename/", { nome: $(this).siblings().val() }, function (data) {
                 $(".piro_overlay").click();
-                window.location = a;
+                window.location = link;
             });
+            return false;
         }); 
     
         $("#buttons a").live("click", function () {

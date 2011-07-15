@@ -1,16 +1,12 @@
 <?php $base = Mapper::base(); ?>
-<div id="points" style="margin: auto;">
-    <div id="errors">Erros: <span>0</span></div>
-    <div id="hits">Acertos: <span>0</span></div>
-    <div id="time">Tempo: <span>02:00</span></div>
-</div>
 <br clear="all" />
-<div class="sponsorListHolder" style="margin: auto;">
+<div class="sponsorListHolder" style="margin: auto;width:225px">
     <!--Looping through the array-->
     <?php foreach ($charts as $key => $chart) { ?>
         <div class="sponsor">
             <div class="sponsorFlip" id="close_<?php echo $key; ?>"> 
-                <div  title="Clique para virar"> 
+                <div  title="Clique para virar">
+                    <?php echo $key + 1; ?>
                     <?php echo $html->image("verso.png"); ?> 
                 </div> 
             </div> 

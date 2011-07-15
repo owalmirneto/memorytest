@@ -14,7 +14,7 @@ a:hover{text-decoration:none;}
 .clear {clear: both;}
 .radius{-moz-border-radius: 8px;border-radius: 8px;-webkit-border-radius: 8px;}
 .shadow{box-shadow:0px 0px -10px #575757;-moz-box-shadow:0px 0px 1px #575757;-webkit-box-shadow:0px 0px 1px #575757;}
-body{cursor: default;}
+body{cursor: default; }
 /* global */
 
 
@@ -30,8 +30,8 @@ body{cursor: default;}
 
 body{
     font-size:0.825em;
-    color:#666;
-    background-color:#fff;
+    color:#fff;
+    background:#78A812;
     font-family:Arial, Helvetica, sans-serif;
 }
 
@@ -57,7 +57,7 @@ h2{
 }
 
 a, a:visited {
-    color:#0196e3;
+    color:#000;
     text-decoration:none;
     outline:none;
 }
@@ -77,7 +77,7 @@ a img{
 #header{
     padding:15px 0 15px 25px;
     text-shadow:0 1px 1px white;
-
+    color: #666;
     margin-bottom:15px;
     background:url("img/page_bg.gif") repeat-x bottom #f8f8f8;
 }
@@ -165,14 +165,14 @@ a img{
 #tabs div div{
     border: 1px solid;
     border-bottom: none;
-    background: #eee;
+    background: yellowgreen;
     margin-left: 0px;
     padding: 0px 7px;
     cursor: pointer;
 }
 
 #tabs div.content{
-    background: #eee;
+    background: yellowgreen;
     text-align: left;
     padding: 0px 15px;
     margin-left: 10px;
@@ -207,7 +207,7 @@ a img{
 }
 /* extra */
 
-/* extra */
+/* modegame */
 #modegame { 
     width: 400px; 
     margin: auto;

@@ -1,3 +1,8 @@
+<?php
+echo "<pre>";
+print_r($usuario);
+die("<br /><br />Linha: " . __LINE__);
+?>
 <div id="config">
     <div id="header">
         <h2><?php echo $usuario["nome"] ?>, congratulations!</h2>

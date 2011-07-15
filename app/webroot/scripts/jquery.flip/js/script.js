@@ -1,5 +1,6 @@
 (function($) {
     $(function() {
+        // execução do flip 
         jquery_flip.init();
         jquery_flip.hover();
     });
@@ -9,14 +10,14 @@
             jquery_flip.setNull();
             /* The following code is executed once the DOM is loaded */
             $(".sponsorFlip").click( function(){
-
+                // inicialização das variaveis
                 var element = $(this),
                 all_element = $(".sponsorFlip"),
                 first = $("#first"),
                 id_first = $("#idfirst"),
                 second = $("#second"),
                 id_second = $("#idsecond");
-                    
+                
                 if (!$("#time span").hasClass("init")) {
                     jquery_flip.startChronometer();
                 }

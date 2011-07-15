@@ -19,6 +19,7 @@ class CampaignController extends AppController {
 
         $this->set("current", 1);
         $usuario = Session::read('Usuario');
+        
         if (!$usuario) {
             $this->set("jogosalvo", array());
         } else {
@@ -79,7 +80,6 @@ class CampaignController extends AppController {
         // calculando os pontos
         $points = (($hits * 50) - ($errors * 5) + ($aux[0] * 60 + $aux[1]));
         // setando as variaveis necessarias para a view
-        $this->set("usuario", $jogador);
         $this->set("hits", $hits);
         $this->set("errors", $errors);
         $this->set("time", $time);
@@ -87,7 +87,6 @@ class CampaignController extends AppController {
         $this->set("level", $level);
         //verifica se há post
         if ($_POST) {
-            
             // salva o recorde do jogador 
             $record->save(array(
                 "usuario_id" => $jogador["id"],
@@ -103,14 +102,20 @@ class CampaignController extends AppController {
                             "usuario_id" => $jogador["id"],
                             "nivel" => $level,
                         )));
+        
             $jogo["usuario_id"] = $jogador["id"];
             $jogo["nivel"] = $level;
             // guarda o nivel desse jogador
             $jogosalvo->save($jogo);
             
-            $jogador["jogosalvo"][] = $jogo[0];
+            $jogador = $usuario->all(array(
+                        "conditions" => array(
+                            "id" => $jogador["id"],
+                        )));
+            Session::write("Usuario", $jogador[0]);
             
-            Session::write("Usuario", $jogador);
+            // setando as variaveis necessarias para a view
+            $this->set("usuario", $jogador[0]);
         }
         // resgata o usuario depois de salvo
     }

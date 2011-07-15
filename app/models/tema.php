@@ -33,7 +33,7 @@ class Tema extends AppModel {
         // verifica se há algum registros
         if (count($temas) == 0) {
             // caso não tenha levanta excessão
-            throw new Exception("Nenhum tema encontrado");
+            throw new Exception("Nenhumz tema encontrado");
         }
         // retorno
         return $temas;

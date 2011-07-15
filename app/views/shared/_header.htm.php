@@ -1,6 +1,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!--style of page-->
-<?php echo $html->stylesheet(array("screen.css",));?>
+<?php
+if (@$_SESSION["Usuario"]["tema"]["tema"] != "") {
+    $tema = $_SESSION["Usuario"]["tema"]["tema"];
+} else {
+    $tema = "Companies";
+}
+
+?>
+<?php echo $html->stylesheet(array("$tema/screen.css",));$tema = null;?>
 <!--/style of page-->
 
 <!--jquery-->

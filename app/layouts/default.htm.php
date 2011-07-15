@@ -17,14 +17,16 @@ $usuario = Session::read('Usuario');
                 <div id="settings" style="float:right; margin-right: 20px">
                     <span id="user"><?php if ($usuario) { echo $usuario["nome"]; } // endif; ?></span>
                     <a href="<?php echo $base; ?>"><?php echo $html->image("home.png"); ?></a> 
+                    <a class="pirobox_gall1" rel="content-400-350" href="<?php echo $base; ?>/home/player">
+                        <?php echo $html->image("group.png", array("alt"=>"Trocar jogador")); ?>
+                    </a>
+                    <a class="pirobox_gall1" rel="content-400-350" href="<?php echo $base; ?>/home/theme">
+                        <?php echo $html->image("theme.png", array("alt"=>"Trocar tema")); ?>
+                    </a>
                     <?php //echo $html->image("setting.png"); ?> 
                     <?php //echo $html->image("refresh.png", array("onclick" => "window.location.reload(true)")); ?> 
                 </div>
                 <br clear="all" />
-            </div>
-            <div id="sidebar-left">
-                <?php //echo $this->element('shared/menu'); ?>
-                <?php //echo $this->element('shared/level'); ?>
             </div>
             <div id="main">
                 <?php echo $this->contentForLayout; ?>

@@ -28,7 +28,7 @@ class Jogosalvo extends AppModel {
         // verifica se há algum registros
         if (count($jogosalvos) == 0) {
             // caso não tenha levanta excessão
-            throw new Exception("Nenhum jogosalvo encontrado");
+            throw new Exception("Nenhumz jogosalvo encontrado");
         }
         // retorno
         return $jogosalvos;

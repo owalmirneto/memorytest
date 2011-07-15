@@ -18,6 +18,25 @@ class HomeController extends AppController {
     }
 
     /**
+     * Ação mostra como jogar
+     * @name tutorial
+     * @return Void 
+     */
+    public function tutorial() {
+        // instancia do Model carta
+        $carta = new Carta();
+        // retorna as cartas (embaralhadas) necessaria para o jogo
+        $charts = $carta->getAll(array(
+                    "order" => "RAND()",
+                    "limit" => "1,2"
+                ));
+        // duplica as carta
+        $charts = array_merge($charts, $charts);
+        // setando as cartas para a view
+        $this->set("charts", $charts);
+    }
+
+    /**
      * Ação salva o nome do Usuario
      * @name name
      * @return Void 
@@ -56,6 +75,28 @@ class HomeController extends AppController {
             }
         }
     }
+    
+    /**
+     * Ação troca o tema 
+     * @name theme
+     * @return Void 
+     */
+    public function theme() {
+        // seta o layout
+        $this->layout = false;
+        // verifica se há post
+        if ($this->data) {
+            
+        }
+        // instancia do model Tema 
+        $tema = new Tema();
+        try {
+            // retorna todos os temas
+            $this->set("temas", $tema->getAll(array("recursion" => -1)));
+        } catch (Exception $exc) {
+            $this->set("temas", $exc->getMessage());
+        }
+    }
 
     /**
      * Ação parabeniza o Usuario
@@ -72,6 +113,16 @@ class HomeController extends AppController {
         } else {
             $this->set("jogosalvo", $usuario["jogosalvo"]);
         }
+    }
+
+    /**
+     * Ação parabeniza o Usuario
+     * @name highrecords
+     * @return Void 
+     */
+    public function credits() {
+        // seta o layout
+        $this->layout = false;
     }
 
     /**
@@ -109,7 +160,7 @@ class HomeController extends AppController {
         }
     }
 
-    public function newgame() {
+    public function newmemory() {
         // seta o layout
         $this->layout = false;
         // instancia de Modo 
@@ -117,7 +168,7 @@ class HomeController extends AppController {
         try {
             $this->set("modos", $modo->getAll());
         } catch (Exception $exc) {
-            $this->set("modos", $exc->getMessage());
+            $this->set("modos", "Nenhum jogador encontrado");
         }
     }
 
