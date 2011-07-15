@@ -6,9 +6,8 @@ if (@$_SESSION["Usuario"]["tema"]["tema"] != "") {
 } else {
     $tema = "Companies";
 }
-
 ?>
-<?php echo $html->stylesheet(array("$tema/screen.css",));$tema = null;?>
+<?php echo $html->stylesheet(array("$tema/screen.css",));?>
 <!--/style of page-->
 
 <!--jquery-->
@@ -45,3 +44,7 @@ echo $html->script(array(
 <!--aplication-->
 <?php echo $html->script(array("application.js",)); ?>
 <!--/aplication-->
+
+<!--themes-->
+<?php echo $html->script(array("themes/$tema/init.js",));$tema = null;?>
+<!--/themes-->

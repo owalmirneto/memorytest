@@ -4,10 +4,20 @@
     <?php if (is_array($temas)) { ?>
         <ul>
             <?php foreach ($temas as $key => $tema) { ?>
-                <li><b>Gmail: </b>wfsneto@gmail.com</li>
+                <li><a href="<?php echo $base; ?>/" alt="<?php echo $tema["id"]; ?>" title="<?php echo $tema["id"]; ?>"><?php echo $tema["tema"]; ?></a></li>
             <?php } // endforeach; ?>
         </ul>
     <?php } else { ?>
-        <option value=""><?php echo $temas; ?></option>
+        <li><?php echo $temas; ?></li>
     <?php } // endif; ?>
 </div>
+<script type="text/javascript">
+    $(document).ready( function () {
+        $("#buttons ul li a").live("click", function () {
+            $.post("<?php echo $base; ?>/home/theme/", { tema_id: $(this).attr("alt") }, function (data) {
+                $(".piro_overlay").click();
+                //window.location = "<?php echo $base; ?>/home";
+            });
+        });
+    });
+</script>

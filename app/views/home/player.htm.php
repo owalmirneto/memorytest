@@ -34,7 +34,7 @@
                 window.location = link;
             });
             return false;
-        }); 
+        });
     
         $("#buttons a").live("click", function () {
             $.post("<?php echo $base; ?>/home/player/", { nome: $(this).siblings().val() }, function () {

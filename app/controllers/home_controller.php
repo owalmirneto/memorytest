@@ -75,7 +75,7 @@ class HomeController extends AppController {
             }
         }
     }
-    
+
     /**
      * Ação troca o tema 
      * @name theme
@@ -86,7 +86,14 @@ class HomeController extends AppController {
         $this->layout = false;
         // verifica se há post
         if ($this->data) {
-            
+            $usuario = new Usuario();
+            $this->data["id"] = $_SESSION["Usuario"]["id"];
+            $usuario->save($this->data);
+            $jogador = $usuario->all(array(
+                        "conditions" => array(
+                            "id" => $_SESSION["Usuario"]["id"],
+                        )));
+            Session::write("Usuario", $jogador[0]);
         }
         // instancia do model Tema 
         $tema = new Tema();
