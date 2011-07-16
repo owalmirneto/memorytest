@@ -1,5 +1,5 @@
 <?php $base = Mapper::base(); ?>
-<div id="header"><h2>Créditos</h2></div>
+<div id="header"><h2>Escolha um tema</h2></div>
 <div id="buttons">
     <?php if (is_array($temas)) { ?>
         <ul>
