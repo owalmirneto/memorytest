@@ -11,7 +11,7 @@ Config::write("database", array(
         "driver" => "mysql",
         "host" => "localhost",
         "user" => "root",
-        "password" => "",
+        "password" => "{senha}",
         "database" => "memorytest",
         "prefix" => ""
     ),
