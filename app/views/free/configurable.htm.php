@@ -2,7 +2,9 @@
 <div id="points" style="margin: auto;">
     <div id="errors">Erros: <span>0</span></div>
     <div id="hits">Acertos: <span>0</span></div>
-    <div id="time">Tempo: <span>02:00</span></div>
+    <div id="time">Tempo: <span>01:00</span></div>
+    <div id="modo" style="display:none" >3</div>
+    <div id="navigator" style="display:none"><a id="submit" href="<?php echo $base; ?>/home/configurable"><b>Jogar Novamente!</b></a></div>
 </div>
 <br clear="all" />
 <div class="sponsorListHolder" style="margin: auto;">

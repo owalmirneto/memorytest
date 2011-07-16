@@ -15,7 +15,13 @@ a:hover{text-decoration:none;}
 .radius{-moz-border-radius: 8px;border-radius: 8px;-webkit-border-radius: 8px;}
 .shadow{box-shadow:0px 0px -10px #575757;-moz-box-shadow:0px 0px 1px #575757;-webkit-box-shadow:0px 0px 1px #575757;}
 /* global */
-
+input {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
 
 .clear{
     clear:both;
@@ -24,15 +30,9 @@ a:hover{text-decoration:none;}
 
 #main{
     margin:0 auto;
-    width:800px;
+    width:680px;
 }
 
-body{
-    font-size:0.825em;
-    color:#666;
-    background-color:#fff;
-    font-family:Arial, Helvetica, sans-serif;
-}
 
 h1,h2{
     font-family:"Myriad Pro",Arial,Helvetica,sans-serif;
@@ -55,11 +55,6 @@ h2{
     text-align:center;
 }
 
-a, a:visited {
-    color:#0196e3;
-    text-decoration:none;
-    outline:none;
-}
 
 a:hover{
     /*    text-decoration:underline;*/
@@ -72,13 +67,24 @@ a img{
 /* container */
 #container {width:980px; margin:0 auto; border:1px solid}
 
-/* header */
-#header{
-    padding:15px 0 15px 25px;
-    text-shadow:0 1px 1px white;
 
-    margin-bottom:15px;
-    background:url("img/page_bg.gif") repeat-x bottom #f8f8f8;
+/* content */
+
+/* config */
+#config {
+    font-size: 17px;
+    text-align: center;
+}
+
+/* button */
+.button {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 5px 17px;
+    text-align: center;
 }
 
 /* content */
@@ -96,16 +102,10 @@ a img{
     border-radius: 8px;
     border: 1px solid #ddd;
     margin: 10px;
-    padding: 5px 10px;
+    padding: 5px 17px;
     text-align: center;
 }
-.button:hover {
-    cursor: pointer;
-    background: #666;
-    color: #ddd;
-    margin: 10px;
-    padding: 5px 10px;
-}
+
 
 /* button list*/
 #buttons ul{
@@ -123,11 +123,13 @@ a img{
 }
 
 #buttons ul li:hover {
-    /*    cursor: pointer;
-        background: #666;
-        color: #ddd;
-        margin: 10px;
-        padding: 5px 10px;*/
+    /* 
+    cursor: pointer;
+    background: #666;
+    color: #ddd;
+    margin: 10px;
+    padding: 5px 10px;
+    */
 }
 
 /* sidebar-left */
@@ -147,6 +149,12 @@ a img{
     border: 1px solid #ddd;
 }
 
+/* user */
+#user {
+    font-size: 17px;
+    font-style: italic;
+}
+
 /* menu */
 #menu {
     width: 180px;
@@ -155,7 +163,52 @@ a img{
     padding: 5px 7px;
 }
 
-/* footer */
+/* tabs */
+#tabs div{
+    float: left;
+    margin: auto;
+    margin-left: 10px;
+}
+#tabs div div{
+    border: 1px solid;
+    border-bottom: none;
+    margin-left: 0px;
+    padding: 0px 7px;
+    cursor: pointer;
+}
+
+#tabs div.content{
+    text-align: left;
+    padding: 0px 15px;
+    margin-left: 10px;
+    overflow-y: scroll;
+    height: 290px;
+    border: 1px solid;
+    width: 350px;
+}
+
+
+/* header-config */
+#header-config{
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background: none repeat scroll 0 0 #F5F5F5;
+    float: right; 
+    display: none;
+    margin-right: 14px;
+    margin-top: 10px;
+    padding: 9px 16px;
+}
+/* message */
+#message{
+    color: red;
+    text-align: center;
+    font-style: italic
+}
 
 /* text/titles */
 
@@ -165,14 +218,14 @@ a img{
 
 /* points*/
 #points {
-    width: 500px;
+    width: 680px;
 }
 #points div {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
     float: left;
-    width: 160px;
+    width: 140px;
     font-size: 13px;
     margin: 5px 5px;
     padding: 5px 5px;
@@ -180,7 +233,7 @@ a img{
 }
 /* extra */
 
-/* extra */
+/* modegame */
 #modegame { 
     width: 400px; 
     margin: auto;

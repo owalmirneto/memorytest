@@ -28,6 +28,24 @@ class Usuario extends AppModel {
     public $hasMany = array("Jogosalvo");
 
     /**
+     * Retorna retorna os pontos adiquirido na partida 
+     * @name getPoints
+     * @return array
+     */
+    public function getPoints(array $params = array()) {
+        // extrai os indices do array 
+        extract($params);
+
+        // tratando a variavel de tempo 
+        $time = str_replace("-", ":", $time);
+        $aux = explode(":", $time);
+        // calculando os pontos
+        $points = (($hits * 50) - ($errors * 20) + ($aux[0] * 60 + $aux[1]));
+        // setando as variaveis necessarias para a view 
+        return  $points;
+    }
+
+    /**
      * Retorna todos os registros correspondente ao model Usuario
      * @name getAll
      * @return Usuario[]

@@ -1,0 +1,33 @@
+body{
+    font-size:0.825em;
+    color:#fff;
+    background:#78A812;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+a, a:visited {
+    color:#000;
+    text-decoration:none;
+    outline:none;
+}
+
+/* header */
+#header{
+    padding:15px 0 15px 25px;
+    text-shadow:0 1px 1px white;
+    color: #666;
+    margin-bottom:15px;
+    background:url("img/page_bg.gif") repeat-x bottom #f8f8f8;
+}
+
+
+/* button */
+.button {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 5px 17px;
+    text-align: center;
+}

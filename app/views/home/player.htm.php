@@ -20,21 +20,14 @@
     <div id="header">
         <h2>Ou digite seu nome</h2>
     </div>
-    <div style="text-align: center; margin-bottom: 20px">
-        <input value="" />
-        <a href="<?php echo $base; ?>" class="button" id="submit">OK</a>
+    <?php echo $this->element('templates/name'); ?>
+    <div>
+        <input type="hidden" value="" />
+        <a class="submit button" href="<?php echo $base; ?>">Salvar jogador</a>
     </div>
 </div>
 <script type="text/javascript">
     $(document).ready( function () {
-        $("#submit").live("click", function () {
-            link = $(this).attr("href");
-            $.post("<?php echo $base; ?>/home/savename/", { nome: $(this).siblings().val() }, function (data) {
-                $(".piro_overlay").click();
-                window.location = link;
-            });
-            return false;
-        });
     
         $("#buttons a").live("click", function () {
             $.post("<?php echo $base; ?>/home/player/", { nome: $(this).siblings().val() }, function () {
@@ -44,4 +37,3 @@
         });
     });
 </script>
-

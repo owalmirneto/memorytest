@@ -11,16 +11,16 @@ Config::write("database", array(
         "driver" => "mysql",
         "host" => "localhost",
         "user" => "root",
-        "password" => "{senha}",
+        "password" => "",
         "database" => "memorytest",
         "prefix" => ""
     ),
     "production" => array(
         "driver" => "mysql",
-        "host" => "",
-        "user" => "",
+        "host" => "localhost",
+        "user" => "root",
         "password" => "",
-        "database" => "",
+        "database" => "memorytest",
         "prefix" => ""
     )
 ));

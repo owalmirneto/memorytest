@@ -14,7 +14,6 @@ class HomeController extends AppController {
      * @return Void 
      */
     public function index() {
-        
     }
 
     /**

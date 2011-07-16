@@ -3,7 +3,7 @@
     <div id="buttons">
         <ul>
             <li title="Jogar">
-                <a href="<?php echo $base; ?>/home/newmemory" rel="content-400-220" class="pirobox_gall1">Jogar</a>
+                <a href="<?php echo $base; ?>/home/newmemory" rel="content-400-300" class="pirobox_gall1">Jogar</a>
             </li>
             <li title="Trocar jogador">
                 <a href="<?php echo $base; ?>/home/player" rel="content-400-350" class="pirobox_gall1">Trocar jogador</a>

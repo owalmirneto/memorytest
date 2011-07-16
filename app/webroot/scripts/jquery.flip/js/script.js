@@ -8,6 +8,8 @@
         
         init: function() {
             jquery_flip.setNull();
+            
+            $('#navigator').hide();
             /* The following code is executed once the DOM is loaded */
             $(".sponsorFlip").click( function(){
                 // inicialização das variaveis
@@ -67,6 +69,7 @@
             hits = parseInt($("#hits span").html());
             errors = parseInt($("#errors span").html());
             time = $("#time span").html();
+            modo = $("#modo").html();
             charts = parseInt($("#qtdcharts").val());
             
             href = $('#winner').attr("href");
@@ -76,7 +79,7 @@
                 setTimeout(function () {
                     time = time.replace(":", "-");
                     
-                    new_href = href + "/" + hits + "/" + errors + "/" + time;
+                    new_href = href + "/" + hits + "/" + errors + "/" + time + "/" + modo;
                     
                     $('#winner').attr("href", new_href);
                     
@@ -86,17 +89,19 @@
                     });
                     
                     $('#winner').click();
+                    $('#navigator').show();
+                    
                     $.post(new_href, {
                         hits: hits,
                         errors: errors,
                         time: time
                     }, function (data) {});
                     return false;
-                },1500)
+                },1500);
             }
         },
         sHors: "00",
-        sMins: "01",
+        sMins: "00",
         sSecs: 60,
         startChronometer: function() {
                         

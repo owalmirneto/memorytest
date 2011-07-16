@@ -5,7 +5,7 @@
 (function($){
     $(document).ready( function () {
         if ($("#user").html() == "") {
-            $("#name").click();
+            //$("#name").click();
         }
     });
 })(jQuery);

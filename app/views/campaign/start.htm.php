@@ -2,8 +2,9 @@
 <div id="points" style="margin: auto;">
     <div id="errors">Errors: <span>0</span></div>
     <div id="hits">Hits: <span>0</span></div>
-    <div id="time">Time: <span>02:00</span></div>
-    <div id="point">Points: <span>300</span></div>
+    <div id="time">Time: <span>01:00</span></div>
+    <div id="modo" style="display:none" >2</div>
+    <div id="navigator" style="display:none"><a id="submit" href="<?php echo $base; ?>/campaign/start/<?php echo $level+1; ?>"><b>Próximo nível!</b></a></div>
 </div>
 <br clear="all" />
 <div class="sponsorListHolder" style="margin: auto;">

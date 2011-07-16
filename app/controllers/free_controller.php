@@ -93,37 +93,43 @@ class FreeController extends AppController {
      * @param type $time Tempo gasto
      * @return Void 
      */
-    public function congratulations($hits, $errors, $time) {
+    public function congratulations($hits, $errors, $time, $modo) {
         // seta o layout
         $this->layout = false;
-        // instancia dos models usados
+        // instancia dos model usudario
         $usuario = new Usuario();
-        $record = new Recorde();
-        // usuario da vez 
+        // resgatando o usuario da vez 
         $jogador = Session::read("Usuario");
-        $object = $usuario->getByName($jogador["nome"]);
-        // tratando a variavel de tempo 
-        $time = str_replace("-", ":", $time);
-        $aux = explode(":", $time);
-        // calculando os pontos
-        $points = (($hits * 50) - ($errors * 5) + ($aux[0] * 60 + $aux[1]));
-        // setando as variaveis necessarias para a view
-        $this->set("usuario", $object);
-        $this->set("hits", $hits);
-        $this->set("errors", $errors);
-        $this->set("time", $time);
-        $this->set("points", $points);
+        // retorna o pontos da partida 
+        $points = $usuario->getPoints(array(
+            "hits" => $hits,
+            "errors" => $errors,
+            "time" => $time
+        ));
+        // pasando dados para o template
+        $_SESSION["data"] = array(
+            "hits" => $hits,
+            "errors" => $errors,
+            "time" => str_replace("-", ":", $time),
+            "points" => $points,
+            "congratulations" => "Parabéns",
+            "href" => Mapper::base(),
+            "link" => "Jogar novamente",
+        );
         //verifica se há post
         if ($_POST) {
+            // instacia do model Recorde 
+            $record = new Recorde();
             // salva o recorde do jogador 
             $record->save(array(
-                "usuario_id" => $object["id"],
-                "modo_id" => 1,
+                "usuario_id" => $jogador["id"],
+                "modo_id" => $modo,
                 "erros" => $_POST["errors"],
                 "acertos" => $_POST["hits"],
                 "tempos" => str_replace("-", ":", $_POST["time"]),
                 "pontos" => $points,
             ));
+            Session::write("Usuario", $usuario->getByName($jogador["nome"]));
         }
     }
 

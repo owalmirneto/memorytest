@@ -1,5 +1,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!--style of page-->
+
+<!--/style of page-->
+<?php echo $html->stylesheet(array("screen.css",));?>
+<!--themes of page-->
 <?php
 if (@$_SESSION["Usuario"]["tema"]["tema"] != "") {
     $tema = $_SESSION["Usuario"]["tema"]["tema"];
@@ -7,8 +11,8 @@ if (@$_SESSION["Usuario"]["tema"]["tema"] != "") {
     $tema = "Companies";
 }
 ?>
-<?php echo $html->stylesheet(array("$tema/screen.css",));?>
-<!--/style of page-->
+<?php echo $html->stylesheet(array("themes/$tema/screen.css",));?>
+<!--/themes of page-->
 
 <!--jquery-->
 <?php echo $html->script(array("jquery-1.6.1.min.js",));?>

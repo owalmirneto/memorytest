@@ -67,38 +67,4 @@ class Recorde extends AppModel {
         return $recorde;
     }
 
-    /**
-     * Apagar apenas um registro correspondente ao model Recorde
-     * @name delete
-     * @param int $id Id do recorde
-     * @return Recorde 
-     */
-    public function _delete($id) {
-        // executa
-        if (!$this->delete($id)) {
-            throw new Exception("Não possível apagar recorde");
-        }
-        // retorno
-        return true;
-    }
-
-    /**
-     * Persiti os dados na base de dados ao inserir ou atualizar um registro.
-     * @name persist
-     * @param array $data Dados a serem persistidos na base de dados.
-     * @param string $exeption Mensagem da Excessão.
-     * @return Boolean 
-     */
-    public function persist($data, $exeption) {
-        // executar o comando de persistencia
-        $return = $this->save($data);
-        // verifica se realmente foi inserido
-        if (!$return) {
-            // caso não tenha levanta excessão
-            throw new Exception($exeption);
-        }
-        // retorno
-        return true;
-    }
-
 }

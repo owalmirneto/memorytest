@@ -32,7 +32,7 @@ else:
     if ($_SERVER["SERVER_NAME"] == "localhost") {
         Config::write("environment", 'development'); //Change here if there's no multilang
     } 
-    else if ($_SERVER["SERVER_NAME"] == "www.wfsneto.com.br" || $_SERVER["SERVER_NAME"] == "wfsneto.com.br") {
+    else if ($_SERVER["SERVER_NAME"] == "memorytest.wfsneto.com.br/" || $_SERVER["SERVER_NAME"] == "wfsneto.com.br" || $_SERVER["SERVER_NAME"] == "www.wfsneto.com.br") {
         Config::write("environment", 'production'); //Change here if there's no multilang
     }
 endif;

@@ -2,7 +2,8 @@
 <div id="points" style="margin: auto;">
     <div id="errors">Erros: <span>0</span></div>
     <div id="hits">Acertos: <span>0</span></div>
-    <div id="time">Tempo: <span>02:00</span></div>
+    <div id="time">Tempo: <span>01:00</span></div>
+    <div id="modo" style="display:none" >1</div>
 </div>
 <br clear="all" />
 <div class="sponsorListHolder" style="margin: auto;">
@@ -21,6 +22,11 @@
     <?php } // endforeach; ?>
     <div class="clear"></div>
 </div>
+<br clear="all" />
+<div id="navigator" style="text-align: center; display: none">
+    <a class="button" href="<?php echo $base; ?>/free"><b>Jogar Novamente!</b></a>
+</div>
+
 <a id="winner" href="<?php echo $base; ?>/free/congratulations" rel="content-400-300" class="pirobox_gall1"></a>
 <input type="hidden" id="first" />
 <input type="hidden" id="idfirst" />
