@@ -54,9 +54,11 @@
                             errors = parseInt($("#errors span").html());
                             $("#errors span").html(errors+1);
                             setTimeout(function () {
+							
                                 element.revertFlip();
-                                close = "#"+id_first.val();
-                                $(close).revertFlip();
+                                close_chart = "#"+id_first.val();
+								alert( close_chart );
+                                $(close_chart).revertFlip();
                                 all_element.removeClass("wait");
                                 jquery_flip.setNull();
                             },1000);

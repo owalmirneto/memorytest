@@ -22,8 +22,10 @@
     <?php } // endforeach; ?>
     <div class="clear"></div>
 </div>
+<br clear="all" /> 
+<br clear="all" />
 <div style="text-align: center">
-    <div id="navigator" style="display:none"><a id="submit" href="<?php echo $base; ?>/campaign/start/<?php echo $level+1; ?>"><b>Próximo nível!</b></a></div>
+    <div id="navigator" style="display:none"><a class="button" id="submit" href="<?php echo $base; ?>/campaign/start/<?php echo $level+1; ?>"><b>Próximo nível!</b></a></div>
 </div>
 
 <a id="winner" href="<?php echo $base; ?>/campaign/congratulations/<?php echo $level; ?>" rel="content-400-300" class="pirobox_gall1"></a>

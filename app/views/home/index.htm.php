@@ -11,6 +11,9 @@
             <li title="Recordes">
                 <a href="<?php echo $base; ?>/home/highrecords" rel="content-400-400" class="pirobox_gall1">Recordes</a>
             </li>
+            <li title="Comentários">
+                <a href="<?php echo $base; ?>/post">Comentários</a>
+            </li>
             <li title="Créditos">
                 <a href="<?php echo $base; ?>/home/credits" rel="content-350-250" class="pirobox_gall1">Créditos</a>
             </li>
