@@ -6,6 +6,7 @@
  * ambientes forem necessários.
  *
  */
+/*
 Config::write("database", array(
     "development" => array(
         "driver" => "mysql",
@@ -24,4 +25,22 @@ Config::write("database", array(
         "prefix" => ""
     )
 ));
-
+*/
+Config::write("database", array(
+    "development" => array(
+        "driver" => "mysql",
+        "host" => "localhost",
+        "user" => "root",
+        "password" => "umdoistres",
+        "database" => "study_pianolab_memorytest",
+        "prefix" => ""
+    ),
+    "production" => array(
+        "driver" => "mysql",
+        "host" => "dbmy0042.whservidor.com",
+        "user" => "wfsneto_1",
+        "password" => "senha123",
+        "database" => "wfsneto_1",
+        "prefix" => ""
+    )
+));
