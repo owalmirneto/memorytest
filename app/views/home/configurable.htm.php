@@ -25,6 +25,5 @@
                 $("p#message").html("");
             }
         });
-        
     });
 </script>

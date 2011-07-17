@@ -16,7 +16,7 @@ $usuario = Session::read('Usuario');
                 </h1>
                 <div id="settings" style="float:right; margin-right: 20px">
                     <span id="user"><?php if ($usuario) { echo $usuario["nome"]; } // endif; ?></span>
-                    <a href="<?php echo $base; ?>"><?php echo $html->image("home.png"); ?></a>
+                    <a href="<?php echo $base; ?>/"><?php echo $html->image("home.png"); ?></a>
                     <?php echo $html->image("setting.png", array("id" => "setting", "style" => "")); ?>
                 </div>
                 <br clear="all" />

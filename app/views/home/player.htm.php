@@ -9,7 +9,7 @@
                 <?php foreach ($usuarios as $key => $usuario) { ?>
                     <li title="<?php echo $usuario["nome"]; ?>">
                         <input type="hidden" value="<?php echo $usuario["nome"]; ?>" />
-                        <a href="<?php echo $base; ?>/home/"><?php echo $usuario["nome"]; ?></a>
+                        <a class="options" href="<?php echo $base; ?>/home/"><?php echo $usuario["nome"]; ?></a>
                     </li>
                 <?php } // endforeach; ?>
             </ul>
@@ -28,12 +28,12 @@
 </div>
 <script type="text/javascript">
     $(document).ready( function () {
-    
-        $("#buttons a").live("click", function () {
+        $(".options").live("click", function () {
             $.post("<?php echo $base; ?>/home/player/", { nome: $(this).siblings().val() }, function () {
                 $(".piro_overlay").click();
-                $(window.location).attr('href', '#');
+                window.location.reload(true);
             });
+            return false
         });
     });
 </script>

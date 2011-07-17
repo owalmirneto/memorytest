@@ -183,6 +183,7 @@ class HomeController extends AppController {
         $this->layout = false;
         // instancia de usuario 
         $usuario = new Usuario();
+        
         try {
             $this->set("usuarios", $usuario->getAll(array(
                         "conditions" => array("ip_rede" => $_SERVER["REMOTE_ADDR"]),
@@ -191,12 +192,11 @@ class HomeController extends AppController {
         } catch (Exception $exc) {
             $this->set("usuarios", $exc->getMessage());
         }
-        //  retorna o model
-        $usuario = ClassRegistry::load('Usuario', 'Model');
 
         if ($this->data) {
             try {
                 $object = $usuario->getByName($this->data["nome"]);
+                
                 $_SESSION["Usuario"] = $object;
             } catch (Exception $exc) {
                 

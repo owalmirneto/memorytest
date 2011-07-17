@@ -24,3 +24,4 @@ Config::write("database", array(
         "prefix" => ""
     )
 ));
+

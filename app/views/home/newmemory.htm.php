@@ -4,7 +4,7 @@
         <h2>Escolha o modo de jogo</h2>
     </div>
         <?php if (!Session::read('Usuario')) { ?>
-            <?php echo $this->element('templates/name'); ?>
+            <?php echo $this->element('templates/name'); ?> 
         <?php } // endif; ?>
     <div id="buttons">
         <?php if (is_array($modos)) { ?>

@@ -91,6 +91,8 @@
                     $('#winner').click();
                     $('#navigator').show();
                     
+                    setTheme();
+                    
                     $.post(new_href, {
                         hits: hits,
                         errors: errors,

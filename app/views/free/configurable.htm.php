@@ -23,6 +23,9 @@
     <?php } // endforeach; ?>
     <div class="clear"></div>
 </div>
+<div style="text-align: center">
+    <div id="navigator" style="display:none"><a id="submit" href="<?php echo $base; ?>/home/configurable"><b>Jogar Novamente!</b></a></div>
+</div>
 <a id="winner" href="<?php echo $base; ?>/free/congratulations" rel="content-400-300" class="pirobox_gall1"></a>
 <input type="hidden" id="first" />
 <input type="hidden" id="idfirst" />

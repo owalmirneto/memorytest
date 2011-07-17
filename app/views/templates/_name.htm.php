@@ -18,11 +18,15 @@
                 return false;
             } else {
                 $("#message").html("");
-            }
+            }            
+            link = $(this).attr("href");
             $.post("<?php echo $base; ?>/home/savename/", { nome: nome_usuario }, function (data) {
                 $(".piro_overlay").click();
-                //window.location = link;
+                setTimeout( function (){
+                    window.location = link;
+                },10)
             });
+            return false;
         });
     });
 </script>

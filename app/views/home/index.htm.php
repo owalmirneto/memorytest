@@ -14,9 +14,6 @@
             <li title="Créditos">
                 <a href="<?php echo $base; ?>/home/credits" rel="content-350-250" class="pirobox_gall1">Créditos</a>
             </li>
-<!--            <li title="Credits">
-                <a href="<?php echo $base; ?>/home/credits" rel="content-400-200" class="pirobox_gall1">Credits</a>
-            </li>-->
         </ul>
     </div>
 </div>

@@ -70,6 +70,9 @@ class Mapper extends Object {
      */
     public static function base() {
         $self = self::getInstance();
+        if ($self->base == "/") {
+            return null;
+        }
         return $self->base;
     }
     /**

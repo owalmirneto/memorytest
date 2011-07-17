@@ -113,7 +113,7 @@ class FreeController extends AppController {
             "time" => str_replace("-", ":", $time),
             "points" => $points,
             "congratulations" => "Parabéns",
-            "href" => Mapper::base(),
+            "href" => Mapper::base() . "/",
             "link" => "Jogar novamente",
         );
         //verifica se há post

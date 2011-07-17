@@ -100,7 +100,8 @@ class Usuario extends AppModel {
         $options = array(
             // referente as condições
             "conditions" => array(
-                "nome" => $name
+                "nome" => $name,
+                "ip_rede" => $_SERVER["REMOTE_ADDR"],
             ),
             // referente a limite
             "limit" => "1",

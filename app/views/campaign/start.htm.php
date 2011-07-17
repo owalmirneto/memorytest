@@ -4,7 +4,6 @@
     <div id="hits">Hits: <span>0</span></div>
     <div id="time">Time: <span>01:00</span></div>
     <div id="modo" style="display:none" >2</div>
-    <div id="navigator" style="display:none"><a id="submit" href="<?php echo $base; ?>/campaign/start/<?php echo $level+1; ?>"><b>Próximo nível!</b></a></div>
 </div>
 <br clear="all" />
 <div class="sponsorListHolder" style="margin: auto;">
@@ -23,6 +22,10 @@
     <?php } // endforeach; ?>
     <div class="clear"></div>
 </div>
+<div style="text-align: center">
+    <div id="navigator" style="display:none"><a id="submit" href="<?php echo $base; ?>/campaign/start/<?php echo $level+1; ?>"><b>Próximo nível!</b></a></div>
+</div>
+
 <a id="winner" href="<?php echo $base; ?>/campaign/congratulations/<?php echo $level; ?>" rel="content-400-300" class="pirobox_gall1"></a>
 <input type="hidden" id="first" />
 <input type="hidden" id="idfirst" />
