@@ -57,7 +57,7 @@
 							
                                 element.revertFlip();
                                 close_chart = "#"+id_first.val();
-								alert( close_chart );
+				//alert( close_chart );
                                 $(close_chart).revertFlip();
                                 all_element.removeClass("wait");
                                 jquery_flip.setNull();
